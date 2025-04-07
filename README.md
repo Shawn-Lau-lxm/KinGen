@@ -6,3 +6,6 @@ Kinases are critical regulators in numerous cellular processes, and their dysreg
 
 ## Usage
 
+```
+python train_agent.py --target-protein-name EPIDERMAL_GROWTH_FACTOR_RECEPTOR --kinase-model-name 17_kinases --use-transfer --dataset davis
+```
