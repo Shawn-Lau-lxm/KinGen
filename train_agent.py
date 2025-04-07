@@ -97,7 +97,7 @@ def train_agent(restore_prior_from='data/Prior_chembl_31.ckpt',
         #smiles = [smi for smi in smiles if smi != "" and Chem.MolFromSmiles(smi) is not None]
 
         score_affinity = scoring_function(smiles) # score.shape = (batch_size,)
-        score = [max(_score, 5) / 5 for _score in score_affinity] # diversity filter
+        score = [min(_score, 10) / 10 for _score in score_affinity] # diversity filter
         print("The length of score--1: ", len(score))
         print("Calculating QED score~")
         #qed_score = [QED.qed(Chem.MolFromSmiles(smi)) if Chem.MolFromSmiles(smi) is not None else 0 for smi in smiles]
